@@ -9,6 +9,7 @@
 #import "MyCollectionViewController.h"
 
 #import "MyCollectionViewCell.h"
+#import "MyFlowLayout.h"
 
 @interface MyCollectionViewController ()
 
@@ -16,10 +17,18 @@
 
 @implementation MyCollectionViewController
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+	DNSLogMethod
+	self.selectedIndexPath = indexPath;
+	[self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
 	//	[self.collectionView registerClass:[MyCollectionViewCell class] forCellWithReuseIdentifier:@"MyCollectionViewCell"];
+	
+//	self.collectionView.collectionViewLayout = [[MyFlowLayout alloc] init];
 	
 	NSMutableArray *images = [NSMutableArray array];
 	
@@ -36,23 +45,32 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-	NSDictionary *section = self.sections[indexPath.section];
-	NSArray *images = section[@"images"];
-	UIImage *image = images[indexPath.item];
-	
-	srand(indexPath.item + indexPath.section);
-	
-	int n = rand() % 50;
-	
-	NSLog(@"%d", n);
-	
-	float ratio = (10 + n) / 100.0f;
-	
-	CGSize s = image.size;
-	
-	s.width *= ratio;
-	s.height *= ratio;
+//	NSDictionary *section = self.sections[indexPath.section];
+//	NSArray *images = section[@"images"];
+//	UIImage *image = images[indexPath.item];
 //	
+////	srand(indexPath.item + indexPath.section);
+////	
+////	int n = rand() % 50;
+////	
+////	NSLog(@"%d", n);
+////	
+////	float ratio = (10 + n) / 100.0f;
+////	
+////	CGSize s = image.size;
+////	
+////	s.width *= ratio;
+////	s.height *= ratio;
+////	//
+	CGSize s;
+	if (indexPath.section == self.selectedIndexPath.section && indexPath.item == self.selectedIndexPath.item) {
+		s.width = 200;
+		s.height = 200;
+	}
+	else {
+		s.width = 200;
+		s.height = 100;
+	}
 	return s;
 }
 
@@ -72,10 +90,10 @@
 	NSArray *images = section[@"images"];
 	UIImage *image = images[indexPath.item];
 	
-	NSLog(@"%@", cell);
-	NSLog(@"%@", cell.imageView);
+//	NSLog(@"%@", cell);
+//	NSLog(@"%@", cell.imageView);
 	cell.imageView.image = image;
-	NSLog(@"%@", cell.imageView.image);
+//	NSLog(@"%@", cell.imageView.image);
 	
 	return cell;
 }

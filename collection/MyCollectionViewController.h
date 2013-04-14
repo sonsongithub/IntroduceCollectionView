@@ -11,5 +11,6 @@
 @interface MyCollectionViewController : UICollectionViewController
 
 @property (strong, nonatomic) NSMutableArray *sections;
+@property (strong, nonatomic) NSIndexPath *selectedIndexPath;
 
 @end

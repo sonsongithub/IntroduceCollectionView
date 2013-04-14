@@ -35,6 +35,7 @@
 		143E05651716A262004AE939 /* 08.png in Resources */ = {isa = PBXBuildFile; fileRef = 143E055A1716A262004AE939 /* 08.png */; };
 		143E05661716A262004AE939 /* 09.png in Resources */ = {isa = PBXBuildFile; fileRef = 143E055B1716A262004AE939 /* 09.png */; };
 		143E05671716A262004AE939 /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = 143E055C1716A262004AE939 /* 10.png */; };
+		14EF3DC4171B58DB00917D90 /* MyFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EF3DC3171B58DB00917D90 /* MyFlowLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,8 @@
 		143E055A1716A262004AE939 /* 08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 08.png; sourceTree = "<group>"; };
 		143E055B1716A262004AE939 /* 09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 09.png; sourceTree = "<group>"; };
 		143E055C1716A262004AE939 /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
+		14EF3DC2171B58DB00917D90 /* MyFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFlowLayout.h; sourceTree = "<group>"; };
+		14EF3DC3171B58DB00917D90 /* MyFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFlowLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,8 @@
 				143E054C17169D9C004AE939 /* MyCollectionViewCell.m */,
 				143E054E17169EB1004AE939 /* MyCollectionViewController.h */,
 				143E054F17169EB1004AE939 /* MyCollectionViewController.m */,
+				14EF3DC2171B58DB00917D90 /* MyFlowLayout.h */,
+				14EF3DC3171B58DB00917D90 /* MyFlowLayout.m */,
 				143E054217169C8B004AE939 /* second.png */,
 				143E054417169C8B004AE939 /* second@2x.png */,
 				143E052117169C8B004AE939 /* Supporting Files */,
@@ -254,6 +259,7 @@
 				143E052B17169C8B004AE939 /* AppDelegate.m in Sources */,
 				143E054D17169D9C004AE939 /* MyCollectionViewCell.m in Sources */,
 				143E055017169EB1004AE939 /* MyCollectionViewController.m in Sources */,
+				14EF3DC4171B58DB00917D90 /* MyFlowLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +356,11 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "collection/collection-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					_DEBUG,
+				);
 				INFOPLIST_FILE = "collection/collection-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
