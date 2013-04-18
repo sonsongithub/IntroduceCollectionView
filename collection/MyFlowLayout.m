@@ -20,9 +20,36 @@
 	
 	NSArray *attributesArray = [super layoutAttributesForElementsInRect:rect];
 	
+//	self.selectedIndexPath = [NSIndexPath indexPathForItem:1 inSection:0];
+	
+	if (self.selectedIndexPath) {
+	
+	UICollectionViewCell *selectedCell = [self.collectionView cellForItemAtIndexPath:self.selectedIndexPath];
+	
 	for (UICollectionViewLayoutAttributes *attributes in attributesArray) {
+		if (CGRectGetMidX(attributes.frame) == CGRectGetMidX(selectedCell.frame) && CGRectGetMidY(attributes.frame) == CGRectGetMidY(selectedCell.frame)) {
+			CGSize s = attributes.size;
+			s.height = 400;
+			attributes.size  =s;
+			CGRect r = attributes.frame;
+			s = r.size;
+			s.height = 400;
+			r.size = s;
+			r.origin.y += 100;
+			attributes.frame = r;
+			
+//			CGPoint c = attributes.center;
+//			c = CGPointMake(CGRectGetMidX(attributes.frame), CGRectGetMidY(attributes.frame));
+//			attributes.center = c;
+		}
+		else if (CGRectGetMidY(attributes.frame) > CGRectGetMidY(selectedCell.frame)) {
+			CGRect r = attributes.frame;
+			r.origin.y += 100;
+			attributes.frame = r;
+			
+		}
 		DNSLogRect(attributes.frame);
-		DNSLogSize(attributes.size);
+	}
 	}
 	return attributesArray;
 }

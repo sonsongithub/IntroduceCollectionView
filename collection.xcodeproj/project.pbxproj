@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1409929C1720970D008A94BD /* EditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1409929B1720970D008A94BD /* EditView.xib */; };
+		1409929F172097AA008A94BD /* EditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1409929E172097AA008A94BD /* EditView.m */; };
 		143E051B17169C8B004AE939 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143E051A17169C8B004AE939 /* UIKit.framework */; };
 		143E051D17169C8B004AE939 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143E051C17169C8B004AE939 /* Foundation.framework */; };
 		143E051F17169C8B004AE939 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143E051E17169C8B004AE939 /* CoreGraphics.framework */; };
@@ -39,6 +41,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1409929B1720970D008A94BD /* EditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditView.xib; sourceTree = "<group>"; };
+		1409929D172097AA008A94BD /* EditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditView.h; sourceTree = "<group>"; };
+		1409929E172097AA008A94BD /* EditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditView.m; sourceTree = "<group>"; };
 		143E051717169C8B004AE939 /* collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = collection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		143E051A17169C8B004AE939 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		143E051C17169C8B004AE939 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -136,6 +141,9 @@
 				14EF3DC3171B58DB00917D90 /* MyFlowLayout.m */,
 				143E054217169C8B004AE939 /* second.png */,
 				143E054417169C8B004AE939 /* second@2x.png */,
+				1409929D172097AA008A94BD /* EditView.h */,
+				1409929E172097AA008A94BD /* EditView.m */,
+				1409929B1720970D008A94BD /* EditView.xib */,
 				143E052117169C8B004AE939 /* Supporting Files */,
 			);
 			path = collection;
@@ -245,6 +253,7 @@
 				143E05651716A262004AE939 /* 08.png in Resources */,
 				143E05661716A262004AE939 /* 09.png in Resources */,
 				143E05671716A262004AE939 /* 10.png in Resources */,
+				1409929C1720970D008A94BD /* EditView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +269,7 @@
 				143E054D17169D9C004AE939 /* MyCollectionViewCell.m in Sources */,
 				143E055017169EB1004AE939 /* MyCollectionViewController.m in Sources */,
 				14EF3DC4171B58DB00917D90 /* MyFlowLayout.m in Sources */,
+				1409929F172097AA008A94BD /* EditView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

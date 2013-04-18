@@ -10,6 +10,7 @@
 
 #import "MyCollectionViewCell.h"
 #import "MyFlowLayout.h"
+#import "EditView.h"
 
 @interface MyCollectionViewController ()
 
@@ -19,16 +20,48 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 	DNSLogMethod
-	self.selectedIndexPath = indexPath;
-	[self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
+	[self.collectionView performBatchUpdates:^{
+		MyFlowLayout *layout = (MyFlowLayout*)self.collectionView.collectionViewLayout;
+		if (layout.selectedIndexPath)
+			layout.selectedIndexPath = nil;
+		else
+			layout.selectedIndexPath = indexPath;
+		[layout invalidateLayout];
+	} completion:nil];
+	
+//	if (self.selectedIndexPath) {
+//		self.selectedIndexPath = nil;
+//		[collectionView reloadItemsAtIndexPaths:self.selectedRowIndexPaths];
+//		self.selectedRowIndexPaths = nil;
+//	}
+//	else {
+//		self.selectedIndexPath = indexPath;
+//		UICollectionViewCell *selectedCell = [collectionView cellForItemAtIndexPath:indexPath];
+//		NSMutableArray *sameRowCells = [NSMutableArray array];
+//		for (UICollectionViewCell *visibleCell in [collectionView visibleCells]) {
+//			//visibleCell.frame
+//			if (CGRectGetMidY(visibleCell.frame) == CGRectGetMidY(selectedCell.frame)) {
+//				[sameRowCells addObject:visibleCell];
+//			}
+//		}
+//		NSMutableArray *selectedRowIndexPaths = [NSMutableArray array];
+//		for (UICollectionViewCell *sameRowCell in sameRowCells) {
+//			NSIndexPath *path = [collectionView indexPathForCell:sameRowCell];
+//			[selectedRowIndexPaths addObject:path];
+//		}
+//		self.selectedRowIndexPaths = selectedRowIndexPaths;
+//		[collectionView reloadItemsAtIndexPaths:selectedRowIndexPaths];
+//	}
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+	[collectionView reloadItemsAtIndexPaths:self.selectedRowIndexPaths];
+	self.selectedRowIndexPaths = nil;
+	self.selectedIndexPath = nil;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
-	//	[self.collectionView registerClass:[MyCollectionViewCell class] forCellWithReuseIdentifier:@"MyCollectionViewCell"];
-	
-//	self.collectionView.collectionViewLayout = [[MyFlowLayout alloc] init];
 	
 	NSMutableArray *images = [NSMutableArray array];
 	
@@ -42,35 +75,14 @@
 	[self.sections addObject:@{ @"title" : @"hoge02", @"images" : images }];
 	
 	[self.collectionView reloadData];
+	
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-//	NSDictionary *section = self.sections[indexPath.section];
-//	NSArray *images = section[@"images"];
-//	UIImage *image = images[indexPath.item];
-//	
-////	srand(indexPath.item + indexPath.section);
-////	
-////	int n = rand() % 50;
-////	
-////	NSLog(@"%d", n);
-////	
-////	float ratio = (10 + n) / 100.0f;
-////	
-////	CGSize s = image.size;
-////	
-////	s.width *= ratio;
-////	s.height *= ratio;
-////	//
 	CGSize s;
-	if (indexPath.section == self.selectedIndexPath.section && indexPath.item == self.selectedIndexPath.item) {
-		s.width = 200;
-		s.height = 200;
-	}
-	else {
-		s.width = 200;
-		s.height = 100;
-	}
+	s.width = 200;
+	s.height = 200;
+
 	return s;
 }
 
@@ -80,7 +92,13 @@
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-	return [self.sections count];
+	return 2;
+}
+
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+	id obj = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"Footer" forIndexPath:indexPath];
+	return obj;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -94,6 +112,15 @@
 //	NSLog(@"%@", cell.imageView);
 	cell.imageView.image = image;
 //	NSLog(@"%@", cell.imageView.image);
+	
+	if (self.selectedIndexPath) {
+		if (indexPath.section == self.selectedIndexPath.section && indexPath.item == self.selectedIndexPath.item) {
+			[cell addSubview:self.editView];
+			CGRect r = self.editView.frame;
+			r.origin.y = 200;
+			self.editView.frame = r;
+		}
+	}
 	
 	return cell;
 }

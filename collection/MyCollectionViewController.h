@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class EditView;
+
 @interface MyCollectionViewController : UICollectionViewController
 
 @property (strong, nonatomic) NSMutableArray *sections;
 @property (strong, nonatomic) NSIndexPath *selectedIndexPath;
+@property (strong, nonatomic) NSMutableArray *selectedRowIndexPaths;
+@property (strong, nonatomic) IBOutlet EditView *editView;
 
 @end

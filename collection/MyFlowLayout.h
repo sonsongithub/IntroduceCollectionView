@@ -10,5 +10,6 @@
 
 @interface MyFlowLayout : UICollectionViewFlowLayout
 
+@property (nonatomic, strong) NSIndexPath *selectedIndexPath;
 
 @end
