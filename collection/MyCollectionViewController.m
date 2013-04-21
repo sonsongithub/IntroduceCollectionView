@@ -20,38 +20,26 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 	DNSLogMethod
+	
+	MyCollectionViewCell *selectedCell = (MyCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+	
 	[self.collectionView performBatchUpdates:^{
 		MyFlowLayout *layout = (MyFlowLayout*)self.collectionView.collectionViewLayout;
-		if (layout.selectedIndexPath)
+		if (layout.selectedIndexPath) {
 			layout.selectedIndexPath = nil;
-		else
+		}
+		else {
 			layout.selectedIndexPath = indexPath;
+		}
 		[layout invalidateLayout];
-	} completion:nil];
-	
-//	if (self.selectedIndexPath) {
-//		self.selectedIndexPath = nil;
-//		[collectionView reloadItemsAtIndexPaths:self.selectedRowIndexPaths];
-//		self.selectedRowIndexPaths = nil;
-//	}
-//	else {
-//		self.selectedIndexPath = indexPath;
-//		UICollectionViewCell *selectedCell = [collectionView cellForItemAtIndexPath:indexPath];
-//		NSMutableArray *sameRowCells = [NSMutableArray array];
-//		for (UICollectionViewCell *visibleCell in [collectionView visibleCells]) {
-//			//visibleCell.frame
-//			if (CGRectGetMidY(visibleCell.frame) == CGRectGetMidY(selectedCell.frame)) {
-//				[sameRowCells addObject:visibleCell];
-//			}
-//		}
-//		NSMutableArray *selectedRowIndexPaths = [NSMutableArray array];
-//		for (UICollectionViewCell *sameRowCell in sameRowCells) {
-//			NSIndexPath *path = [collectionView indexPathForCell:sameRowCell];
-//			[selectedRowIndexPaths addObject:path];
-//		}
-//		self.selectedRowIndexPaths = selectedRowIndexPaths;
-//		[collectionView reloadItemsAtIndexPaths:selectedRowIndexPaths];
-//	}
+	} completion:^(BOOL success) {
+		
+		DNSLogRect(selectedCell.frame);
+		DNSLogSize(collectionView.contentSize);
+		if (selectedCell.frame.origin.y + selectedCell.frame.size.height + 100 == collectionView.contentSize.height) {
+			[collectionView scrollRectToVisible:CGRectMake(0, collectionView.contentSize.height-1, 100, 100) animated:YES];
+		}
+	}];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -68,11 +56,14 @@
 	for (int i = 0; i < 11; i++) {
 		[images addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%02d.png", i]]];
 	}
+	for (int i = 0; i < 11; i++) {
+		[images addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%02d.png", i]]];
+	}
 	
 	self.sections = [NSMutableArray array];
 	
 	[self.sections addObject:@{ @"title" : @"hoge01", @"images" : images }];
-	[self.sections addObject:@{ @"title" : @"hoge02", @"images" : images }];
+//	[self.sections addObject:@{ @"title" : @"hoge02", @"images" : images }];
 	
 	[self.collectionView reloadData];
 	
@@ -92,7 +83,7 @@
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-	return 2;
+	return 1;
 }
 
 

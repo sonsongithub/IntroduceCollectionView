@@ -10,6 +10,13 @@
 
 @implementation MyFlowLayout
 
+- (CGSize)collectionViewContentSize {
+	CGSize size = [super collectionViewContentSize];
+	if (self.selectedIndexPath)
+		size.height += 100;
+	return size;
+}
+
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
 	DNSLogMethod
 	return [super layoutAttributesForItemAtIndexPath:indexPath];
@@ -20,36 +27,30 @@
 	
 	NSArray *attributesArray = [super layoutAttributesForElementsInRect:rect];
 	
-//	self.selectedIndexPath = [NSIndexPath indexPathForItem:1 inSection:0];
-	
 	if (self.selectedIndexPath) {
 	
-	UICollectionViewCell *selectedCell = [self.collectionView cellForItemAtIndexPath:self.selectedIndexPath];
-	
-	for (UICollectionViewLayoutAttributes *attributes in attributesArray) {
-		if (CGRectGetMidX(attributes.frame) == CGRectGetMidX(selectedCell.frame) && CGRectGetMidY(attributes.frame) == CGRectGetMidY(selectedCell.frame)) {
-			CGSize s = attributes.size;
-			s.height = 400;
-			attributes.size  =s;
-			CGRect r = attributes.frame;
-			s = r.size;
-			s.height = 400;
-			r.size = s;
-			r.origin.y += 100;
-			attributes.frame = r;
+		UICollectionViewLayoutAttributes *selectedCellAttribute = [self layoutAttributesForItemAtIndexPath:self.selectedIndexPath];
+		
+		for (UICollectionViewLayoutAttributes *attributes in attributesArray) {
+			if (attributes.frame.origin.y > selectedCellAttribute.frame.origin.y) {
+				CGRect r = attributes.frame;
+				r.origin.y += 100;
+				attributes.frame = r;
+				attributes.alpha = 0.2;
+			}
+			else
+				attributes.alpha = 0.2;
 			
-//			CGPoint c = attributes.center;
-//			c = CGPointMake(CGRectGetMidX(attributes.frame), CGRectGetMidY(attributes.frame));
-//			attributes.center = c;
+			if (CGRectGetMidX(attributes.frame) == CGRectGetMidX(selectedCellAttribute.frame) && CGRectGetMidY(attributes.frame) == CGRectGetMidY(selectedCellAttribute.frame)) {
+				attributes.alpha = 1.0;
+			}
+			DNSLogRect(attributes.frame);
 		}
-		else if (CGRectGetMidY(attributes.frame) > CGRectGetMidY(selectedCell.frame)) {
-			CGRect r = attributes.frame;
-			r.origin.y += 100;
-			attributes.frame = r;
-			
-		}
-		DNSLogRect(attributes.frame);
 	}
+	else {
+		for (UICollectionViewLayoutAttributes *attributes in attributesArray) {
+			attributes.alpha = 1;
+		}
 	}
 	return attributesArray;
 }
