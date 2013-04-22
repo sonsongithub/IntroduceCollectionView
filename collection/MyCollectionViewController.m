@@ -51,6 +51,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+	
+	srand(time(0));
+	
 	NSMutableArray *images = [NSMutableArray array];
 	
 	for (int i = 0; i < 11; i++) {
@@ -58,6 +61,11 @@
 	}
 	for (int i = 0; i < 11; i++) {
 		[images addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%02d.png", i]]];
+	}
+	
+	self.cellHeights = [NSMutableArray array];
+	for (int i = 0; i < [images count]; i++) {
+		[self.cellHeights addObject:@(rand()%100 + 160)];
 	}
 	
 	self.sections = [NSMutableArray array];
@@ -70,11 +78,7 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-	CGSize s;
-	s.width = 200;
-	s.height = 200;
-
-	return s;
+	return CGSizeMake([self.cellHeights[indexPath.item] floatValue], [self.cellHeights[indexPath.item] floatValue]);
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -93,7 +97,7 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-	MyCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MyCollectionViewCell" forIndexPath:indexPath];
+	MyCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MyCollectionViewCell2" forIndexPath:indexPath];
 	
 	NSDictionary *section = self.sections[indexPath.section];
 	NSArray *images = section[@"images"];

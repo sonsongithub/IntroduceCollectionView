@@ -30,7 +30,7 @@
                         <rect key="frame" x="0.0" y="20" width="768" height="955"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                        <collectionViewLayout key="collectionViewLayout" id="lCu-ua-TQe" customClass="MyFlowLayout"/>
+                        <collectionViewLayout key="collectionViewLayout" id="lCu-ua-TQe" customClass="AlginWithTopFlowLayout"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" reuseIdentifier="MyCollectionViewCell" id="2U3-4u-iWf" customClass="MyCollectionViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
@@ -59,6 +59,30 @@
                                     <outlet property="imageView" destination="As1-Xo-KyJ" id="KAv-wV-74X"/>
                                 </connections>
                             </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" reuseIdentifier="MyCollectionViewCell2" id="R8k-2h-XtV" customClass="MyCollectionViewCell">
+                                <rect key="frame" x="284" y="0.0" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W0s-ot-EsG"/>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="0.5" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="W0s-ot-EsG" firstAttribute="top" secondItem="R8k-2h-XtV" secondAttribute="top" constant="20" type="user" id="4hY-0p-pZl"/>
+                                    <constraint firstAttribute="bottom" secondItem="W0s-ot-EsG" secondAttribute="bottom" constant="20" type="user" id="78G-7G-4iY"/>
+                                    <constraint firstAttribute="trailing" secondItem="W0s-ot-EsG" secondAttribute="trailing" constant="20" type="user" id="7dK-Ds-9ay"/>
+                                    <constraint firstItem="W0s-ot-EsG" firstAttribute="leading" secondItem="R8k-2h-XtV" secondAttribute="leading" constant="20" type="user" id="Lx1-Sv-BZH"/>
+                                    <constraint firstItem="W0s-ot-EsG" firstAttribute="top" secondItem="R8k-2h-XtV" secondAttribute="top" constant="20" type="user" id="f6S-SX-fzj"/>
+                                </constraints>
+                                <size key="customSize" width="200" height="200"/>
+                                <connections>
+                                    <outlet property="imageView" destination="W0s-ot-EsG" id="bwP-T3-UBF"/>
+                                </connections>
+                            </collectionViewCell>
                         </cells>
                         <connections>
                             <outlet property="dataSource" destination="xzu-4I-UnI" id="ITh-G3-b9P"/>
@@ -81,6 +105,9 @@
         </scene>
     </scenes>
     <classes>
+        <class className="AlginWithTopFlowLayout" superclassName="UICollectionViewFlowLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AlginWithTopFlowLayout.h"/>
+        </class>
         <class className="EditView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EditView.h"/>
         </class>
@@ -95,9 +122,6 @@
             <relationships>
                 <relationship kind="outlet" name="editView" candidateClass="EditView"/>
             </relationships>
-        </class>
-        <class className="MyFlowLayout" superclassName="UICollectionViewFlowLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyFlowLayout.h"/>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>

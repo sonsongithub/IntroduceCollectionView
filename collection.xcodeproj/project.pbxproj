@@ -37,6 +37,7 @@
 		143E05651716A262004AE939 /* 08.png in Resources */ = {isa = PBXBuildFile; fileRef = 143E055A1716A262004AE939 /* 08.png */; };
 		143E05661716A262004AE939 /* 09.png in Resources */ = {isa = PBXBuildFile; fileRef = 143E055B1716A262004AE939 /* 09.png */; };
 		143E05671716A262004AE939 /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = 143E055C1716A262004AE939 /* 10.png */; };
+		14EA47011724AF57002939CB /* AlginWithTopFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EA47001724AF57002939CB /* AlginWithTopFlowLayout.m */; };
 		14EF3DC4171B58DB00917D90 /* MyFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EF3DC3171B58DB00917D90 /* MyFlowLayout.m */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,8 @@
 		143E055A1716A262004AE939 /* 08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 08.png; sourceTree = "<group>"; };
 		143E055B1716A262004AE939 /* 09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 09.png; sourceTree = "<group>"; };
 		143E055C1716A262004AE939 /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
+		14EA46FF1724AF57002939CB /* AlginWithTopFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlginWithTopFlowLayout.h; sourceTree = "<group>"; };
+		14EA47001724AF57002939CB /* AlginWithTopFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlginWithTopFlowLayout.m; sourceTree = "<group>"; };
 		14EF3DC2171B58DB00917D90 /* MyFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFlowLayout.h; sourceTree = "<group>"; };
 		14EF3DC3171B58DB00917D90 /* MyFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFlowLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,6 +142,8 @@
 				143E054F17169EB1004AE939 /* MyCollectionViewController.m */,
 				14EF3DC2171B58DB00917D90 /* MyFlowLayout.h */,
 				14EF3DC3171B58DB00917D90 /* MyFlowLayout.m */,
+				14EA46FF1724AF57002939CB /* AlginWithTopFlowLayout.h */,
+				14EA47001724AF57002939CB /* AlginWithTopFlowLayout.m */,
 				143E054217169C8B004AE939 /* second.png */,
 				143E054417169C8B004AE939 /* second@2x.png */,
 				1409929D172097AA008A94BD /* EditView.h */,
@@ -270,6 +275,7 @@
 				143E055017169EB1004AE939 /* MyCollectionViewController.m in Sources */,
 				14EF3DC4171B58DB00917D90 /* MyFlowLayout.m in Sources */,
 				1409929F172097AA008A94BD /* EditView.m in Sources */,
+				14EA47011724AF57002939CB /* AlginWithTopFlowLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
