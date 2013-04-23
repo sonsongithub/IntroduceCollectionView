@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Q4R-Ec-jX3">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Oes-fv-Ggs">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="Q4R-Ec-jX3" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZKV-D2-PlZ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xzu-4I-UnI" kind="relationship" relationship="rootViewController" id="O8P-sY-WtD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zqv-OD-GzX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2093" y="224"/>
+        </scene>
+        <!--My Collection View Controller - Item-->
+        <scene sceneID="8YG-6i-RwK">
+            <objects>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="xzu-4I-UnI" customClass="MyCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="rWx-aO-QpD">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <collectionViewLayout key="collectionViewLayout" id="lCu-ua-TQe" customClass="ClickableFlowLayout"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" reuseIdentifier="MyCollectionViewCell" id="R8k-2h-XtV" customClass="MyCollectionViewCell">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W0s-ot-EsG"/>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="0.5" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="W0s-ot-EsG" firstAttribute="top" secondItem="R8k-2h-XtV" secondAttribute="top" constant="20" type="user" id="4hY-0p-pZl"/>
+                                    <constraint firstAttribute="bottom" secondItem="W0s-ot-EsG" secondAttribute="bottom" constant="20" type="user" id="78G-7G-4iY"/>
+                                    <constraint firstAttribute="trailing" secondItem="W0s-ot-EsG" secondAttribute="trailing" constant="20" type="user" id="7dK-Ds-9ay"/>
+                                    <constraint firstItem="W0s-ot-EsG" firstAttribute="leading" secondItem="R8k-2h-XtV" secondAttribute="leading" constant="20" type="user" id="Lx1-Sv-BZH"/>
+                                    <constraint firstItem="W0s-ot-EsG" firstAttribute="top" secondItem="R8k-2h-XtV" secondAttribute="top" constant="20" type="user" id="f6S-SX-fzj"/>
+                                </constraints>
+                                <size key="customSize" width="200" height="200"/>
+                                <connections>
+                                    <outlet property="imageView" destination="W0s-ot-EsG" id="bwP-T3-UBF"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="xzu-4I-UnI" id="ITh-G3-b9P"/>
+                            <outlet property="delegate" destination="xzu-4I-UnI" id="Czf-JE-qtA"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Item" id="sM1-dp-diZ"/>
+                    <navigationItem key="navigationItem" id="F8C-ib-QjX">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="yHL-Df-i8g">
+                            <rect key="frame" x="115" y="6" width="537" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Clickable layout"/>
+                                <segment title="algin with top"/>
+                                <segment title="align with bottom"/>
+                            </segments>
+                            <connections>
+                                <action selector="selectLayout:" destination="xzu-4I-UnI" eventType="valueChanged" id="mfV-zg-gHf"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aa0-Js-Ysg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3049" y="224"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="MyCollectionViewCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyCollectionViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="MyCollectionViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyCollectionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="selectLayout:"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
