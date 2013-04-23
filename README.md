@@ -1,9 +1,13 @@
 IntroduceCollectionView
 =======================
+Getting started UICollectionViewFlowLayout
 
-Getting started UICollectionView
+
+Sample
+======
+[![ScreenShot](https://raw.github.com/sonsongithub/IntroduceCollectionView/master/youtube.png)]()
+
 
 License
 =======
-
 BSD License
