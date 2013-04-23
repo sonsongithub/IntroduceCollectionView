@@ -32,7 +32,7 @@
 		UICollectionViewLayoutAttributes *selectedCellAttribute = [self layoutAttributesForItemAtIndexPath:self.selectedIndexPath];
 		
 		for (UICollectionViewLayoutAttributes *attributes in attributesArray) {
-			if (attributes.frame.origin.y > selectedCellAttribute.frame.origin.y) {
+			if (attributes.center.y > selectedCellAttribute.center.y + 1) {
 				CGRect r = attributes.frame;
 				r.origin.y += 100;
 				attributes.frame = r;

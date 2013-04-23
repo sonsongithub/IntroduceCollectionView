@@ -1,24 +1,24 @@
 //
-//  AlginWithTopFlowLayout.m
+//  AlignWithBottomFlowLayout.m
 //  collection
 //
-//  Created by sonson on 2013/04/22.
+//  Created by sonson on 2013/04/24.
 //  Copyright (c) 2013年 sonson. All rights reserved.
 //
 
-#import "AlginWithTopFlowLayout.h"
+#import "AlignWithBottomFlowLayout.h"
 
-@interface AlginWithTopFlowLayoutRowInfo : NSObject
+@interface AlginWithBottomFlowLayoutRowInfo : NSObject
 
 @property (nonatomic, assign) float centerY;
-@property (nonatomic, assign) float top;
+@property (nonatomic, assign) float bottom;
 
 @end
 
-@implementation AlginWithTopFlowLayoutRowInfo
+@implementation AlginWithBottomFlowLayoutRowInfo
 @end
 
-@implementation AlginWithTopFlowLayout
+@implementation AlignWithBottomFlowLayout
 
 - (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect {
 	DNSLogMethod
@@ -33,29 +33,29 @@
 	
 	for (UICollectionViewLayoutAttributes *attributes in attributesArray) {
 		BOOL found = NO;
-		for (AlginWithTopFlowLayoutRowInfo *info in rowInfos) {
+		for (AlginWithBottomFlowLayoutRowInfo *info in rowInfos) {
 			if (fabs(info.centerY - attributes.center.y) < 1) {
 				found = YES;
-				if (info.top > attributes.frame.origin.y) {
+				if (info.bottom < CGRectGetMaxY(attributes.frame)) {
 					info.centerY = attributes.center.y;
-					info.top = attributes.frame.origin.y;
+					info.bottom = CGRectGetMaxY(attributes.frame);
 				}
 				break;
 			}
 		}
 		if (!found) {
-			AlginWithTopFlowLayoutRowInfo *rowInfo = [AlginWithTopFlowLayoutRowInfo new];
+			AlginWithBottomFlowLayoutRowInfo *rowInfo = [AlginWithBottomFlowLayoutRowInfo new];
 			rowInfo.centerY = attributes.center.y;
-			rowInfo.top = attributes.frame.origin.y;
+			rowInfo.bottom = CGRectGetMaxY(attributes.frame);
 			[rowInfos addObject:rowInfo];
 		}
 	}
 	
 	for (UICollectionViewLayoutAttributes *attributes in attributesArray) {
-		for (AlginWithTopFlowLayoutRowInfo *info in rowInfos) {
+		for (AlginWithBottomFlowLayoutRowInfo *info in rowInfos) {
 			if (fabs(info.centerY - attributes.center.y) < 1) {
 				CGRect r = attributes.frame;
-				r.origin.y = info.top;
+				r.origin.y = info.bottom - r.size.height;
 				attributes.frame = r;
 				attributes.center = CGPointMake(CGRectGetMidX(r), CGRectGetMidY(r));
 			}
@@ -64,5 +64,4 @@
 	
 	return attributesArray;
 }
-
 @end

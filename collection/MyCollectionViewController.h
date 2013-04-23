@@ -13,9 +13,7 @@
 @interface MyCollectionViewController : UICollectionViewController
 
 @property (strong, nonatomic) NSMutableArray *sections;
-@property (strong, nonatomic) NSIndexPath *selectedIndexPath;
-@property (strong, nonatomic) NSMutableArray *selectedRowIndexPaths;
-@property (strong, nonatomic) NSMutableArray *cellHeights;
-@property (strong, nonatomic) IBOutlet EditView *editView;
+
+- (IBAction)selectLayout:(id)sender;
 
 @end
