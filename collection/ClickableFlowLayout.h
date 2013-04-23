@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyFlowLayout : UICollectionViewFlowLayout
+@interface ClickableFlowLayout : UICollectionViewFlowLayout
 
 @property (nonatomic, strong) NSIndexPath *selectedIndexPath;
 

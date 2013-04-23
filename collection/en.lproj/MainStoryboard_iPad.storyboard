@@ -27,7 +27,7 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                        <collectionViewLayout key="collectionViewLayout" id="lCu-ua-TQe" customClass="MyFlowLayout"/>
+                        <collectionViewLayout key="collectionViewLayout" id="lCu-ua-TQe" customClass="ClickableFlowLayout"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" reuseIdentifier="MyCollectionViewCell" id="R8k-2h-XtV" customClass="MyCollectionViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
@@ -94,9 +94,6 @@
                 <relationship kind="action" name="selectLayout:"/>
             </relationships>
         </class>
-        <class className="MyFlowLayout" superclassName="UICollectionViewFlowLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyFlowLayout.h"/>
-        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
@@ -108,12 +105,6 @@
         </class>
         <class className="UICollectionViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

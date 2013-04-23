@@ -9,8 +9,8 @@
 #import "MyCollectionViewController.h"
 
 #import "MyCollectionViewCell.h"
-#import "MyFlowLayout.h"
-#import "AlginWithTopFlowLayout.h"
+#import "ClickableFlowLayout.h"
+#import "AlignWithTopFlowLayout.h"
 #import "AlignWithBottomFlowLayout.h"
 
 @interface MyCollectionViewController ()
@@ -24,10 +24,10 @@
 	
 	switch(control.selectedSegmentIndex) {
 		case 0:
-			[self.collectionView setCollectionViewLayout:[[MyFlowLayout alloc] init] animated:YES];
+			[self.collectionView setCollectionViewLayout:[[ClickableFlowLayout alloc] init] animated:YES];
 			break;
 		case 1:
-			[self.collectionView setCollectionViewLayout:[[AlginWithTopFlowLayout alloc] init] animated:YES];
+			[self.collectionView setCollectionViewLayout:[[AlignWithTopFlowLayout alloc] init] animated:YES];
 			break;
 		case 2:
 			[self.collectionView setCollectionViewLayout:[[AlignWithBottomFlowLayout alloc] init] animated:YES];
@@ -40,11 +40,11 @@
 	
 	UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
 	
-	if ([collectionView.collectionViewLayout isKindOfClass:[MyFlowLayout class]]) {
+	if ([collectionView.collectionViewLayout isKindOfClass:[ClickableFlowLayout class]]) {
 		MyCollectionViewCell *selectedCell = (MyCollectionViewCell*)cell;
 		
 		[self.collectionView performBatchUpdates:^{
-			MyFlowLayout *layout = (MyFlowLayout*)self.collectionView.collectionViewLayout;
+			ClickableFlowLayout *layout = (ClickableFlowLayout*)self.collectionView.collectionViewLayout;
 			if (layout.selectedIndexPath) {
 				layout.selectedIndexPath = nil;
 			}

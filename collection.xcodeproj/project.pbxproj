@@ -19,10 +19,6 @@
 		143E053117169C8B004AE939 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 143E053017169C8B004AE939 /* Default-568h@2x.png */; };
 		143E053417169C8B004AE939 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 143E053217169C8B004AE939 /* MainStoryboard_iPhone.storyboard */; };
 		143E053717169C8B004AE939 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 143E053517169C8B004AE939 /* MainStoryboard_iPad.storyboard */; };
-		143E053C17169C8B004AE939 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 143E053B17169C8B004AE939 /* first.png */; };
-		143E053E17169C8B004AE939 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 143E053D17169C8B004AE939 /* first@2x.png */; };
-		143E054317169C8B004AE939 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 143E054217169C8B004AE939 /* second.png */; };
-		143E054517169C8B004AE939 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 143E054417169C8B004AE939 /* second@2x.png */; };
 		143E054D17169D9C004AE939 /* MyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 143E054C17169D9C004AE939 /* MyCollectionViewCell.m */; };
 		143E055017169EB1004AE939 /* MyCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 143E054F17169EB1004AE939 /* MyCollectionViewController.m */; };
 		143E055D1716A262004AE939 /* 00.png in Resources */ = {isa = PBXBuildFile; fileRef = 143E05521716A262004AE939 /* 00.png */; };
@@ -36,8 +32,8 @@
 		143E05651716A262004AE939 /* 08.png in Resources */ = {isa = PBXBuildFile; fileRef = 143E055A1716A262004AE939 /* 08.png */; };
 		143E05661716A262004AE939 /* 09.png in Resources */ = {isa = PBXBuildFile; fileRef = 143E055B1716A262004AE939 /* 09.png */; };
 		143E05671716A262004AE939 /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = 143E055C1716A262004AE939 /* 10.png */; };
-		14EA47011724AF57002939CB /* AlginWithTopFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EA47001724AF57002939CB /* AlginWithTopFlowLayout.m */; };
-		14EF3DC4171B58DB00917D90 /* MyFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EF3DC3171B58DB00917D90 /* MyFlowLayout.m */; };
+		14EA47011724AF57002939CB /* AlignWithTopFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EA47001724AF57002939CB /* AlignWithTopFlowLayout.m */; };
+		14EF3DC4171B58DB00917D90 /* ClickableFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EF3DC3171B58DB00917D90 /* ClickableFlowLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,10 +54,6 @@
 		143E053017169C8B004AE939 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		143E053317169C8B004AE939 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		143E053617169C8B004AE939 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		143E053B17169C8B004AE939 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		143E053D17169C8B004AE939 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		143E054217169C8B004AE939 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		143E054417169C8B004AE939 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		143E054B17169D9B004AE939 /* MyCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewCell.h; sourceTree = "<group>"; };
 		143E054C17169D9C004AE939 /* MyCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewCell.m; sourceTree = "<group>"; };
 		143E054E17169EB1004AE939 /* MyCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewController.h; sourceTree = "<group>"; };
@@ -77,10 +69,10 @@
 		143E055A1716A262004AE939 /* 08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 08.png; sourceTree = "<group>"; };
 		143E055B1716A262004AE939 /* 09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 09.png; sourceTree = "<group>"; };
 		143E055C1716A262004AE939 /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
-		14EA46FF1724AF57002939CB /* AlginWithTopFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlginWithTopFlowLayout.h; sourceTree = "<group>"; };
-		14EA47001724AF57002939CB /* AlginWithTopFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlginWithTopFlowLayout.m; sourceTree = "<group>"; };
-		14EF3DC2171B58DB00917D90 /* MyFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFlowLayout.h; sourceTree = "<group>"; };
-		14EF3DC3171B58DB00917D90 /* MyFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFlowLayout.m; sourceTree = "<group>"; };
+		14EA46FF1724AF57002939CB /* AlignWithTopFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlignWithTopFlowLayout.h; sourceTree = "<group>"; };
+		14EA47001724AF57002939CB /* AlignWithTopFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlignWithTopFlowLayout.m; sourceTree = "<group>"; };
+		14EF3DC2171B58DB00917D90 /* ClickableFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClickableFlowLayout.h; sourceTree = "<group>"; };
+		14EF3DC3171B58DB00917D90 /* ClickableFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClickableFlowLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,20 +124,16 @@
 				143E052A17169C8B004AE939 /* AppDelegate.m */,
 				143E053217169C8B004AE939 /* MainStoryboard_iPhone.storyboard */,
 				143E053517169C8B004AE939 /* MainStoryboard_iPad.storyboard */,
-				143E053B17169C8B004AE939 /* first.png */,
-				143E053D17169C8B004AE939 /* first@2x.png */,
 				143E054B17169D9B004AE939 /* MyCollectionViewCell.h */,
 				143E054C17169D9C004AE939 /* MyCollectionViewCell.m */,
 				143E054E17169EB1004AE939 /* MyCollectionViewController.h */,
 				143E054F17169EB1004AE939 /* MyCollectionViewController.m */,
-				14EF3DC2171B58DB00917D90 /* MyFlowLayout.h */,
-				14EF3DC3171B58DB00917D90 /* MyFlowLayout.m */,
-				14EA46FF1724AF57002939CB /* AlginWithTopFlowLayout.h */,
-				14EA47001724AF57002939CB /* AlginWithTopFlowLayout.m */,
+				14EF3DC2171B58DB00917D90 /* ClickableFlowLayout.h */,
+				14EF3DC3171B58DB00917D90 /* ClickableFlowLayout.m */,
+				14EA46FF1724AF57002939CB /* AlignWithTopFlowLayout.h */,
+				14EA47001724AF57002939CB /* AlignWithTopFlowLayout.m */,
 				143052C71727211500552866 /* AlignWithBottomFlowLayout.h */,
 				143052C81727211500552866 /* AlignWithBottomFlowLayout.m */,
-				143E054217169C8B004AE939 /* second.png */,
-				143E054417169C8B004AE939 /* second@2x.png */,
 				143E052117169C8B004AE939 /* Supporting Files */,
 			);
 			path = collection;
@@ -240,10 +228,6 @@
 				143E053117169C8B004AE939 /* Default-568h@2x.png in Resources */,
 				143E053417169C8B004AE939 /* MainStoryboard_iPhone.storyboard in Resources */,
 				143E053717169C8B004AE939 /* MainStoryboard_iPad.storyboard in Resources */,
-				143E053C17169C8B004AE939 /* first.png in Resources */,
-				143E053E17169C8B004AE939 /* first@2x.png in Resources */,
-				143E054317169C8B004AE939 /* second.png in Resources */,
-				143E054517169C8B004AE939 /* second@2x.png in Resources */,
 				143E055D1716A262004AE939 /* 00.png in Resources */,
 				143E055E1716A262004AE939 /* 01.png in Resources */,
 				143E055F1716A262004AE939 /* 02.png in Resources */,
@@ -269,8 +253,8 @@
 				143E052B17169C8B004AE939 /* AppDelegate.m in Sources */,
 				143E054D17169D9C004AE939 /* MyCollectionViewCell.m in Sources */,
 				143E055017169EB1004AE939 /* MyCollectionViewController.m in Sources */,
-				14EF3DC4171B58DB00917D90 /* MyFlowLayout.m in Sources */,
-				14EA47011724AF57002939CB /* AlginWithTopFlowLayout.m in Sources */,
+				14EF3DC4171B58DB00917D90 /* ClickableFlowLayout.m in Sources */,
+				14EA47011724AF57002939CB /* AlignWithTopFlowLayout.m in Sources */,
 				143052C91727211500552866 /* AlignWithBottomFlowLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

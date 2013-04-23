@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AlginWithTopFlowLayout : UICollectionViewFlowLayout
+@interface AlignWithTopFlowLayout : UICollectionViewFlowLayout
 
 @end

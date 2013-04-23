@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 sonson. All rights reserved.
 //
 
-#import "AlginWithTopFlowLayout.h"
+#import "AlignWithTopFlowLayout.h"
 
 @interface AlginWithTopFlowLayoutRowInfo : NSObject
 
@@ -18,7 +18,7 @@
 @implementation AlginWithTopFlowLayoutRowInfo
 @end
 
-@implementation AlginWithTopFlowLayout
+@implementation AlignWithTopFlowLayout
 
 - (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect {
 	DNSLogMethod

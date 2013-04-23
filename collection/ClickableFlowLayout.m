@@ -6,9 +6,9 @@
 //  Copyright (c) 2013年 sonson. All rights reserved.
 //
 
-#import "MyFlowLayout.h"
+#import "ClickableFlowLayout.h"
 
-@implementation MyFlowLayout
+@implementation ClickableFlowLayout
 
 - (CGSize)collectionViewContentSize {
 	CGSize size = [super collectionViewContentSize];
